@@ -45,15 +45,7 @@ murtaza-portfolio/
     └── murtaza.jpeg
 \`\`\`
 
-## Running Locally
 
-Clone the repo and open `index.html` directly in your browser — no build step required.
-
-\`\`\`bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-open index.html   # or just double-click it
-\`\`\`
 
 ## Contact
 
