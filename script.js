@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('slide-in-active');
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
 
   revealElements.forEach(el => revealObserver.observe(el));
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
-  }, { threshold: 0.35, rootMargin: "-80px 0px -50% 0px" });
+  }, { threshold: 0.3, rootMargin: "-70px 0px -50% 0px" });
 
   sections.forEach(sec => sectionObserver.observe(sec));
 });
@@ -70,7 +70,7 @@ function toggleTheme() {
   html.setAttribute('data-theme', next);
 
   const btn = document.getElementById('themeToggleBtn');
-  btn.innerHTML = next === 'light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+  btn.innerHTML = next === 'light' ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
 }
 
 /* ==========================================================================
@@ -131,7 +131,7 @@ function filterProjects(cat, event) {
    ========================================================================== */
 const modalData = {
   gee: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 8px;"><i class="fa-solid fa-satellite"></i> Sentinel-2 NDVI Annual Statistics (2020–2024)</h3>
+    <h3 style="color: var(--text-ink); margin-bottom: 8px;"><i class="fa-solid fa-satellite" style="color: var(--accent-clay);"></i> Sentinel-2 NDVI Annual Statistics (2020–2024)</h3>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Supervised by Dr. Imran Shahzad | Islamabad-Rawalpindi Region</p>
     <table class="modal-table">
       <thead><tr><th>Year</th><th>NDVI Mean</th><th>NDVI Max</th><th>NDVI Min</th><th>Std Dev</th></tr></thead>
@@ -158,13 +158,13 @@ var medianComposite = s2.select('NDVI').median().clip(studyArea);
     </div>
   `,
   photogrammetry: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 8px;"><i class="fa-solid fa-camera-retro"></i> Digital Photogrammetry GCP Evaluation Results</h3>
+    <h3 style="color: var(--text-ink); margin-bottom: 8px;"><i class="fa-solid fa-camera-retro" style="color: var(--accent-clay);"></i> Digital Photogrammetry GCP Evaluation Results</h3>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Course: Digital Photogrammetry | Islamabad Aerial Scene</p>
     <table class="modal-table">
       <thead><tr><th>GCP ID</th><th>Pixel Location</th><th>Contrast</th><th>Uniqueness</th><th>Sharpness (Laplacian)</th><th>Quality Score</th></tr></thead>
       <tbody>
         <tr><td>GCP1</td><td>(210, 20)</td><td>0.209</td><td>0.000</td><td>34.81</td><td>0.409</td></tr>
-        <tr style="background: rgba(99, 102, 241, 0.15);"><td><strong>GCP2 (Best)</strong></td><td>(2216, 0)</td><td>0.233</td><td>0.389</td><td>42.30</td><td><strong>0.545</strong></td></tr>
+        <tr style="background: var(--bg-subtle);"><td><strong>GCP2 (Best)</strong></td><td>(2216, 0)</td><td>0.233</td><td>0.389</td><td>42.30</td><td><strong>0.545</strong></td></tr>
         <tr><td>GCP3</td><td>(409, 0)</td><td>0.214</td><td>0.360</td><td>24.82</td><td>0.529</td></tr>
         <tr><td>GCP4</td><td>(1312, 0)</td><td>0.247</td><td>0.340</td><td>47.41</td><td>0.534</td></tr>
       </tbody>
@@ -181,8 +181,8 @@ suitability = (contrast_norm + visibility_norm + uniqueness_norm) / 3.0
     </div>
   `,
   webgis: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 12px;"><i class="fa-solid fa-layer-group"></i> WebGIS Architecture (Assignment #4)</h3>
-    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">3-Tier Architecture: Leaflet.js Frontend → Express REST API → PostGIS Spatial DB</p>
+    <h3 style="color: var(--text-ink); margin-bottom: 12px;"><i class="fa-solid fa-layer-group" style="color: var(--accent-clay);"></i> WebGIS Architecture (Assignment #4)</h3>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">3-Tier Architecture: Leaflet.js Frontend &rarr; Express REST API &rarr; PostGIS Spatial DB</p>
     <div class="code-snippet">
 -- PostGIS GeoJSON Export Query
 SELECT json_build_object(
@@ -192,14 +192,14 @@ SELECT json_build_object(
     </div>
   `,
   ai: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> AI / ML Classification Report</h3>
+    <h3 style="color: var(--text-ink); margin-bottom: 8px;"><i class="fa-solid fa-brain" style="color: var(--accent-clay);"></i> AI / ML Classification Report</h3>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Programming for AI | Logistic Regression Sleep Quality Model</p>
     <table class="modal-table">
       <thead><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>Support</th></tr></thead>
       <tbody>
         <tr><td>Poor Sleep (0)</td><td>1.00</td><td>1.00</td><td>1.00</td><td>29</td></tr>
         <tr><td>Good Sleep (1)</td><td>1.00</td><td>1.00</td><td>1.00</td><td>46</td></tr>
-        <tr style="background: rgba(99, 102, 241, 0.15);"><td><strong>Overall Accuracy</strong></td><td colspan="3"><strong>100%</strong></td><td><strong>75</strong></td></tr>
+        <tr style="background: var(--bg-subtle);"><td><strong>Overall Accuracy</strong></td><td colspan="3"><strong>100%</strong></td><td><strong>75</strong></td></tr>
       </tbody>
     </table>
     <div class="code-snippet">
@@ -211,7 +211,7 @@ model.fit(X_train, y_train)
     </div>
   `,
   hydrology: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 8px;"><i class="fa-solid fa-water"></i> Hydrological Basin Modeling & Stream Orders</h3>
+    <h3 style="color: var(--text-ink); margin-bottom: 8px;"><i class="fa-solid fa-water" style="color: var(--accent-clay);"></i> Hydrological Basin Modeling & Stream Orders</h3>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Soan River Basin & Khushab Catchment DEM Processing</p>
     <table class="modal-table">
       <thead><tr><th>Layer</th><th>Geoprocessing Step</th><th>Output Parameters</th></tr></thead>
@@ -223,7 +223,7 @@ model.fit(X_train, y_train)
     </table>
   `,
   datascience: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 8px;"><i class="fa-solid fa-calculator"></i> Landsat 8 Raster Summary Statistics</h3>
+    <h3 style="color: var(--text-ink); margin-bottom: 8px;"><i class="fa-solid fa-calculator" style="color: var(--accent-clay);"></i> Landsat 8 Raster Summary Statistics</h3>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Data Science Fundamentals | Supervised by Dr. Faisal Najeeb</p>
     <table class="modal-table">
       <thead><tr><th>Statistic</th><th>NDVI Value</th></tr></thead>
@@ -236,7 +236,7 @@ model.fit(X_train, y_train)
     </table>
   `,
   postgis: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 12px;"><i class="fa-solid fa-database"></i> PostGIS & GeoPackage Binary Struct</h3>
+    <h3 style="color: var(--text-ink); margin-bottom: 12px;"><i class="fa-solid fa-database" style="color: var(--accent-clay);"></i> PostGIS & GeoPackage Binary Struct</h3>
     <div class="code-snippet">
 -- PostGIS Distance Query
 SELECT c.name, ST_Distance(c.geom::geography, p.geom::geography)/1000 AS km
@@ -245,11 +245,11 @@ WHERE p.name = 'Islamabad' AND ST_DWithin(c.geom::geography, p.geom::geography, 
     </div>
   `,
   flood: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 12px;"><i class="fa-solid fa-shield-halved"></i> Flood Risk Multi-Criteria SDSS</h3>
+    <h3 style="color: var(--text-ink); margin-bottom: 12px;"><i class="fa-solid fa-shield-halved" style="color: var(--accent-clay);"></i> Flood Risk Multi-Criteria SDSS</h3>
     <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">Weighted Overlay: 40% DEM + 30% Slope + 30% River Distance</p>
   `,
   cpp: `
-    <h3 style="color: var(--accent-primary); margin-bottom: 8px;"><i class="fa-solid fa-code"></i> C++ Object Oriented Programming</h3>
+    <h3 style="color: var(--text-ink); margin-bottom: 8px;"><i class="fa-solid fa-code" style="color: var(--accent-clay);"></i> C++ Object Oriented Programming</h3>
     <div class="code-snippet">
 class RecipeSystem : public RecipeManager {
 public:
