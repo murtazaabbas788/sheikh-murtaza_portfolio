@@ -16,8 +16,6 @@ machine learning.
 
 - About / Introduction
 - Academic Education
-- Achievements & Certifications
-- Seminars, Workshops & Training
 - Technical & Soft Skills
 - Featured Projects
 - Areas of Interest
